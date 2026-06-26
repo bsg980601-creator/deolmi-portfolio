@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>박첨지 고민상담소 — 인터랙티브 덜미쇼 | Park Cheomji's Worry Clinic</title>
-<meta name="description" content="전통연희 덜미쇼 × 크로마키 × 라이브 시네마. 박첨지 고민상담소 공연 기록 포트폴리오.">
+<title>조정현 Jo Junghyun — 연출가 / Director</title>
+<meta name="description" content="한국 전통연희·전통예술을 기반으로 창작하는 연출가 조정현. 공연과 기술의 언어를 접목한다. Korean director Jo Junghyun — creating from traditional Yeonhui, bridging performance and technology.">
 <style>
   :root{
     --bg:#0a0c0a; --bg2:#0f120f; --ink:#f2f4ef; --muted:#8b948a;
@@ -17,8 +17,8 @@
     font-family:"Helvetica Neue",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard",sans-serif;
     -webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
   ::selection{background:var(--green);color:#06140b}
+  a{color:inherit}
 
-  /* progress bar */
   .progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;
     background:linear-gradient(90deg,var(--green),#9ff0c0);box-shadow:0 0 12px rgba(61,220,126,.6)}
 
@@ -26,24 +26,24 @@
   .hero{position:relative;height:100vh;min-height:600px;overflow:hidden;
     display:flex;flex-direction:column;justify-content:flex-end}
   .hero .heroimg{position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover;
-    opacity:.55;filter:contrast(1.05);will-change:transform;
-    animation:kenburns 20s ease-out forwards}
+    opacity:.5;filter:contrast(1.05);will-change:transform;
+    animation:kenburns 22s ease-out forwards}
   @keyframes kenburns{from{transform:scale(1.12)}to{transform:scale(1.24)}}
   .hero::after{content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg,rgba(10,12,10,.4) 0%,rgba(10,12,10,.1) 40%,rgba(10,12,10,.95) 100%)}
-  .hero-inner{position:relative;z-index:2;padding:0 6vw 7vh;max-width:1400px}
+    background:linear-gradient(180deg,rgba(10,12,10,.45) 0%,rgba(10,12,10,.15) 38%,rgba(10,12,10,.96) 100%)}
+  .hero-inner{position:relative;z-index:2;padding:0 6vw 8vh;max-width:1400px}
   .eyebrow{font-family:"SF Mono",ui-monospace,monospace;font-size:.72rem;letter-spacing:.32em;
     text-transform:uppercase;color:var(--green);margin-bottom:1.6rem;
     display:flex;align-items:center;gap:.8rem;
     opacity:0;animation:rise .9s .25s var(--ease) forwards}
-  .eyebrow::before{content:"";width:0;height:1px;background:var(--green);
-    animation:lineGrow .9s .5s var(--ease) forwards}
-  @keyframes lineGrow{to{width:42px}}
-  .hero h1{font-size:clamp(2.6rem,8vw,7rem);font-weight:800;line-height:.95;
-    letter-spacing:-.02em;margin-bottom:1.2rem;
+  .eyebrow::before{content:"";width:42px;height:1px;background:var(--green)}
+  .hero h1{font-size:clamp(2.8rem,9vw,7.5rem);font-weight:800;line-height:.95;
+    letter-spacing:-.02em;margin-bottom:1.4rem;
     opacity:0;animation:rise 1s .45s var(--ease) forwards}
   .hero h1 em{font-style:normal;color:var(--green)}
-  .hero .sub{font-size:clamp(.95rem,2vw,1.25rem);color:var(--muted);max-width:640px;font-weight:300;
+  .hero h1 .latin{display:block;font-size:clamp(1rem,3vw,1.9rem);font-weight:400;
+    letter-spacing:.12em;color:var(--muted);margin-top:1rem}
+  .hero .sub{font-size:clamp(.95rem,2vw,1.25rem);color:var(--muted);max-width:680px;font-weight:300;
     opacity:0;animation:rise 1s .7s var(--ease) forwards}
   .hero .sub b{color:var(--ink);font-weight:500}
   .scrolldown{position:absolute;bottom:2.5vh;right:6vw;z-index:3;
@@ -54,7 +54,6 @@
   @keyframes fadein{to{opacity:.9}}
   @keyframes rise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 
-  /* ── SCROLL REVEAL ── */
   .reveal{opacity:0;transform:translateY(36px);
     transition:opacity .9s var(--ease),transform .9s var(--ease)}
   .reveal.rv-in{opacity:1;transform:none}
@@ -62,11 +61,11 @@
     transition:opacity .7s var(--ease),transform .7s var(--ease)}
   .stagger.rv-in>*{opacity:1;transform:none}
 
-  /* ── INTRO ── */
-  .intro{padding:14vh 6vw;max-width:1100px;margin:0 auto;
-    display:grid;grid-template-columns:1fr;gap:3.5rem}
-  .intro .lead{font-size:clamp(1.4rem,3.4vw,2.4rem);font-weight:300;line-height:1.4;letter-spacing:-.01em}
-  .intro .lead b{font-weight:600;color:var(--green)}
+  /* ── STATEMENT ── */
+  .statement{padding:16vh 6vw;max-width:1080px;margin:0 auto;
+    display:grid;grid-template-columns:1fr;gap:3rem}
+  .statement .lead{font-size:clamp(1.4rem,3.6vw,2.5rem);font-weight:300;line-height:1.4;letter-spacing:-.01em}
+  .statement .lead b{font-weight:600;color:var(--green)}
   .meta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
     gap:2rem;padding-top:3rem;border-top:1px solid var(--line)}
   .meta-grid dt{font-family:"SF Mono",monospace;font-size:.66rem;letter-spacing:.2em;
@@ -74,20 +73,35 @@
   .meta-grid dd{font-size:.95rem;color:var(--ink);line-height:1.6}
   .meta-grid dd span{color:var(--muted);font-size:.85rem}
 
-  /* ── KEYWORDS ── */
-  .tags{padding:0 6vw 12vh;max-width:1100px;margin:0 auto;
+  .tags{padding:0 6vw 14vh;max-width:1080px;margin:0 auto;
     display:flex;flex-wrap:wrap;gap:.7rem}
   .tags span{font-family:"SF Mono",monospace;font-size:.74rem;letter-spacing:.05em;
     padding:.55rem 1rem;border:1px solid var(--line);border-radius:40px;color:var(--muted);
     transition:.3s,transform .25s var(--ease)}
   .tags span:hover{border-color:var(--green);color:var(--green);transform:translateY(-3px)}
 
-  /* ── GALLERY ── */
-  .gallery-head{padding:0 6vw 3.5rem;display:flex;justify-content:space-between;
-    align-items:baseline;flex-wrap:wrap;gap:1rem;max-width:1600px;margin:0 auto}
-  .gallery-head h2{font-size:clamp(1.6rem,4vw,2.8rem);font-weight:700;letter-spacing:-.01em}
-  .gallery-head .count{font-family:"SF Mono",monospace;font-size:.8rem;color:var(--muted);letter-spacing:.1em}
-  .gallery{columns:3;column-gap:14px;padding:0 6vw 14vh;max-width:1600px;margin:0 auto}
+  /* ── WORKS ── */
+  .works-intro{padding:0 6vw 2vh;max-width:1600px;margin:0 auto}
+  .works-intro h2{font-size:clamp(1.6rem,4vw,2.8rem);font-weight:700;letter-spacing:-.01em}
+  .works-intro .count{font-family:"SF Mono",monospace;font-size:.8rem;color:var(--muted);letter-spacing:.1em;margin-top:.6rem;display:block}
+
+  .work{max-width:1600px;margin:0 auto;padding:8vh 6vw;border-top:1px solid var(--line)}
+  .work-head{display:grid;grid-template-columns:auto 1fr;gap:1.6rem 2rem;align-items:start;margin-bottom:3rem}
+  .work-no{font-family:"SF Mono",monospace;font-size:.8rem;color:var(--green);letter-spacing:.2em;padding-top:.6rem}
+  .work-title{font-size:clamp(1.8rem,5vw,3.4rem);font-weight:700;letter-spacing:-.015em;line-height:1.05}
+  .work-genre{color:var(--muted);font-size:clamp(.85rem,2vw,1.05rem);font-weight:300;margin-top:.7rem}
+  .work-metaline{font-family:"SF Mono",monospace;font-size:.72rem;letter-spacing:.12em;color:var(--muted);
+    margin-top:1.1rem;display:flex;gap:1.4rem;flex-wrap:wrap}
+  .work-metaline b{color:var(--ink);font-weight:500}
+  .work-desc{grid-column:2;max-width:760px;font-size:1.02rem;font-weight:300;color:#d6dad2;line-height:1.7}
+
+  /* video */
+  .video{position:relative;padding-top:56.25%;border-radius:6px;overflow:hidden;
+    background:var(--bg2);border:1px solid var(--line);margin-top:.5rem}
+  .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+  /* gallery */
+  .gallery{columns:3;column-gap:14px;margin-top:2.4rem}
   @media(max-width:900px){.gallery{columns:2}}
   @media(max-width:560px){.gallery{columns:1}}
   .shot{break-inside:avoid;margin-bottom:14px;position:relative;cursor:pointer;
@@ -102,9 +116,10 @@
     opacity:0;transform:translateY(6px);transition:.4s var(--ease);text-shadow:0 1px 6px rgba(0,0,0,.8)}
   .shot:hover::after{opacity:.85;transform:translateY(0)}
   .shot::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
-    background:linear-gradient(180deg,transparent 55%,rgba(6,20,11,.55));
-    opacity:0;transition:.4s}
+    background:linear-gradient(180deg,transparent 55%,rgba(6,20,11,.55));opacity:0;transition:.4s}
   .shot:hover::before{opacity:1}
+  .gallery-more{font-family:"SF Mono",monospace;font-size:.72rem;letter-spacing:.12em;color:var(--muted);
+    margin-top:1.4rem;text-align:right}
 
   /* ── LIGHTBOX ── */
   .lb{position:fixed;inset:0;background:rgba(6,8,6,.97);z-index:100;
@@ -126,7 +141,7 @@
     font-family:"SF Mono",monospace;font-size:.78rem;letter-spacing:.2em;color:var(--muted)}
 
   /* ── FOOTER ── */
-  footer{padding:10vh 6vw 8vh;border-top:1px solid var(--line);max-width:1600px;margin:0 auto;
+  footer{padding:12vh 6vw 9vh;border-top:1px solid var(--line);max-width:1600px;margin:0 auto;
     display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:2rem}
   footer .big{font-size:clamp(1.8rem,5vw,3.4rem);font-weight:700;letter-spacing:-.01em;line-height:1.1}
   footer .big em{font-style:normal;color:var(--green)}
@@ -145,6 +160,9 @@
     transition:.3s var(--ease)}
   .langtoggle:hover{border-color:var(--green);color:var(--green);transform:translateY(-2px)}
 
+  @media(max-width:680px){
+    .work-head{grid-template-columns:1fr}.work-desc{grid-column:1}
+  }
   @media(prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important}
     .reveal,.stagger>*,.shot img{opacity:1!important;transform:none!important;filter:none!important}
@@ -157,53 +175,54 @@
 
 <!-- HERO -->
 <header class="hero">
-  <img class="heroimg" id="heroimg" src="images/photo_10.jpg" alt="박첨지 고민상담소 무대">
+  <img class="heroimg" id="heroimg" src="images/photo_10.jpg" alt="조정현 연출 무대">
   <div class="hero-inner">
-    <div class="eyebrow">Interactive Deolmi-show · 2025</div>
-    <h1><span class="lang-ko">박첨지<br><em>고민상담소</em></span><span class="lang-en">Park Cheomji's<br><em>Worry Clinic</em></span></h1>
+    <div class="eyebrow">Director · 연출가</div>
+    <h1><span class="lang-ko">조<em>정현</em></span><span class="lang-en">Jo<em> Junghyun</em></span>
+      <span class="latin lang-ko">JO JUNGHYUN</span><span class="latin lang-en">조정현</span></h1>
     <p class="sub">
-      <span class="lang-ko">전통연희 <b>덜미쇼</b>가 <b>크로마키</b>와 <b>라이브 시네마</b>를 만났다.<br>인형과 배우, 그린스크린과 실시간 영상이 한 무대에서 관객의 고민에 답한다.</span>
-      <span class="lang-en">A traditional Korean puppet show <b>(Deolmi)</b> meets <b>chroma-key</b> and <b>live cinema</b>.<br>Puppets, actors, green screens and real-time imagery answer the audience's worries — live.</span>
+      <span class="lang-ko">한국 <b>전통연희·전통예술</b>을 기반으로 창작하는 연출가.<br><b>공연</b>과 <b>기술</b>의 언어를 접목한다.</span>
+      <span class="lang-en">A director creating from Korean <b>traditional Yeonhui</b>.<br>Bridging the languages of <b>performance</b> and <b>technology</b>.</span>
     </p>
   </div>
   <div class="scrolldown">SCROLL ↓</div>
 </header>
 
-<!-- INTRO -->
-<section class="intro">
+<!-- STATEMENT -->
+<section class="statement">
   <p class="lead reveal">
-    <span class="lang-ko">가장 오래된 매체인 <b>인형극</b>과 가장 동시대적인 <b>실시간 영상 기술</b>을 한 무대에 세웠다. 박첨지는 스마트폰을 들고 셀카를 찍고, 그린스크린 뒤의 배우들은 관객의 고민을 영상으로 합성해 되돌려준다.</span>
-    <span class="lang-en">We placed the oldest medium — <b>puppetry</b> — alongside the most contemporary <b>real-time video technology</b>. Park Cheomji takes selfies with a smartphone while actors behind green screens composite the audience's worries back to them, live on screen.</span>
+    <span class="lang-ko">가장 오래된 매체인 <b>전통연희</b>를 가장 동시대적인 <b>무대 기술</b>로 번역한다. 인형과 배우, 그린스크린과 실시간 영상, 관객의 참여가 한 무대에서 만나 — 지금 이 순간을 공연으로 만든다.</span>
+    <span class="lang-en">I translate the oldest medium — <b>traditional Yeonhui</b> — into the most contemporary <b>stage technology</b>. Puppets and actors, green screens and real-time imagery, and the audience meet on one stage, turning the present moment into performance.</span>
   </p>
   <dl class="meta-grid stagger reveal">
-    <div><dt>Genre</dt><dd><span class="lang-ko">전통연희 · 인터랙티브 인형극<br>덜미쇼 × 라이브 시네마</span><span class="lang-en">Traditional Yeonhui<br>Interactive Puppetry × Live Cinema</span></dd></div>
-    <div><dt>Technology</dt><dd>Chroma-key · OBS<br>Isadora · Live compositing</dd></div>
-    <div><dt>Direction</dt><dd><span class="lang-ko">조정현 (현대연희)</span><span class="lang-en">Jo Jeonghyeon<br>(Hyundae Yeonhui)</span></dd></div>
-    <div><dt>Company</dt><dd>A moment lab<br><span>현대연희</span></dd></div>
+    <div><dt>Practice</dt><dd><span class="lang-ko">전통연희 · 인형극<br>라이브 시네마 · 인터랙티브</span><span class="lang-en">Traditional Yeonhui · Puppetry<br>Live Cinema · Interactive</span></dd></div>
+    <div><dt>Technology</dt><dd>Chroma-key · OBS<br>Isadora · Live compositing · AI</dd></div>
+    <div><dt>Company</dt><dd>A moment lab<br><span class="lang-ko">현대연희 대표·연출</span><span class="lang-en">Hyundae Yeonhui, Director</span></dd></div>
+    <div><dt>Based in</dt><dd><span class="lang-ko">서울, 대한민국</span><span class="lang-en">Seoul, Korea</span></dd></div>
   </dl>
 </section>
 
 <!-- KEYWORDS -->
 <div class="tags stagger reveal">
-  <span>#전통연희</span><span>#덜미쇼</span><span>#인형극</span><span>#크로마키</span>
-  <span>#라이브시네마</span><span>#인터랙티브</span><span>#관객참여</span><span>#박첨지</span>
-  <span>#GreenScreen</span><span>#RealTimeVideo</span><span>#Puppetry</span>
+  <span>#전통연희</span><span>#인형극</span><span>#덜미쇼</span><span>#크로마키</span>
+  <span>#라이브시네마</span><span>#인터랙티브</span><span>#관객참여</span>
+  <span>#Yeonhui</span><span>#Puppetry</span><span>#LiveCinema</span><span>#RealTimeVideo</span>
 </div>
 
-<!-- GALLERY -->
-<div class="gallery-head reveal">
-  <h2><span class="lang-ko">공연 기록</span><span class="lang-en">Performance Archive</span></h2>
-  <span class="count">69 STILLS · © A moment lab</span>
+<!-- WORKS -->
+<div class="works-intro reveal">
+  <h2><span class="lang-ko">작업</span><span class="lang-en">Works</span></h2>
+  <span class="count" id="workCount"></span>
 </div>
-<main class="gallery" id="gallery"></main>
+<main id="works"></main>
 
 <!-- FOOTER -->
 <footer class="reveal">
   <div class="big"><span class="lang-ko">전통은<br><em>가장 새로운</em> 무대다.</span><span class="lang-en">Tradition is<br>the <em>newest</em> stage.</span></div>
   <div class="info">
-    HYUNDAE YEONHUI · A MOMENT LAB<br>
-    <a href="mailto:bsg980601@gmail.com">bsg980601@gmail.com</a><br>
-    Direction — Jo Jeonghyeon
+    JO JUNGHYUN · DIRECTOR<br>
+    A MOMENT LAB · <span class="lang-ko">현대연희</span><span class="lang-en">HYUNDAE YEONHUI</span><br>
+    <a href="mailto:bsg980601@gmail.com">bsg980601@gmail.com</a>
   </div>
 </footer>
 
@@ -217,86 +236,159 @@
 </div>
 
 <script>
-  const TOTAL=69;
-  const gallery=document.getElementById('gallery');
-  const pad=n=>String(n).padStart(2,'0');
+/* ──────────────────────────────────────────────────────────────
+   작품 추가 방법: 아래 WORKS 배열에 객체 하나 추가하면 끝.
+   - video : 유튜브 영상 ID (주소 youtu.be/XXXX 의 XXXX). 없으면 null
+   - photos: {from:1, to:99} → images/photo_01.jpg ~ photo_99.jpg / thumbs 동일. 없으면 null
+   ────────────────────────────────────────────────────────────── */
+const WORKS = [
+  {
+    id:'gomin', year:'2026',
+    ko:{title:'박첨지 고민상담소', genre:'인터랙티브 덜미쇼', role:'작·연출',
+        desc:'박첨지 인형극에 라이브 크로마키와 OBS 실시간 영상 합성, 관객의 실시간 참여(투표·무대 개입)를 결합했다. 인형과 배우, 스크린과 객석의 경계를 허물고 "지금 이 순간"을 콘텐츠로 만드는 인터랙티브 덜미쇼.'},
+    en:{title:"Park Cheomji's Worry Clinic", genre:'Interactive Deolmi-show', role:'Written & Directed',
+        desc:'A Park Cheomji puppet show fused with live chroma-key, real-time OBS compositing and live audience participation (voting, on-stage intervention). An interactive Deolmi-show that dissolves the line between puppet and actor, screen and seat — making the present moment itself the content.'},
+    venue:'2026 · Seoul', video:null, photos:{from:1, to:99}
+  },
+  {
+    id:'scandal', year:'덜미쇼 R&D',
+    ko:{title:'그린스크린 스캔들', genre:'인터랙티브 덜미쇼 · 기술접목 초기작업', role:'연출',
+        desc:'덜미(인형극)와 실시간 크로마키 합성을 무대에서 결합한 초기 기술 실험. 전통 연행과 라이브 영상 기술의 접점을 찾아간 작업.'},
+    en:{title:'Green Screen Scandal', genre:'Interactive Deolmi-show · early tech R&D', role:'Directed',
+        desc:'An early experiment merging Deolmi (puppetry) with live chroma-key compositing on stage — searching for the meeting point between traditional performance and real-time video technology.'},
+    venue:null, video:'XqbpLNd9gtM', photos:null
+  },
+  {
+    id:'geukrak', year:'2022',
+    ko:{title:'극락왕생', genre:'넥슨재단 보더리스 공모 선정작', role:'연출',
+        desc:'게임 IP(메이플스토리)를 씻김굿이라는 전통 천도 의례로 번역한 창작공연. 대중 게임의 캐릭터와 서사를 전통 의례의 형식에 얹어, 새로운 세대의 관객에게 전통연희를 건넸다. 남산국악당·세종M시어터·넥슨홀.'},
+    en:{title:'Geukrak Wangsaeng (Passage to Paradise)', genre:'Selected — Nexon Foundation Borderless', role:'Directed',
+        desc:'A creative performance translating a game IP (MapleStory) into Ssitgim-gut, a traditional Korean rite for the dead — placing popular game characters and narrative within ritual form to bring Yeonhui to a new generation. Namsan Gugakdang · Sejong M Theater · Nexon Hall.'},
+    venue:'2022', video:'YgZhzHT0FiI', photos:null
+  },
+  {
+    id:'syndrome', year:'2021',
+    ko:{title:'박첨지 증후군', genre:'한국예술종합학교 창작디딤돌 사업', role:'연출',
+        desc:'전통 인형극(박첨지) 무대에 프로젝션 맵핑을 처음 결합한 기술융합 초기작. 이후 모든 라이브 미디어 작업의 출발점이 된 시도.'},
+    en:{title:'Park Cheomji Syndrome', genre:'K-Arts Creative Stepping-stone Program', role:'Directed',
+        desc:'My first work combining a traditional Park Cheomji puppet stage with projection mapping — the starting point of all the live-media work that followed.'},
+    venue:'2021', video:null, photos:null
+  },
+];
 
-  // 갤러리 생성 + 스크롤 리빌 옵저버 (스태거)
-  const shotObs=new IntersectionObserver((entries,obs)=>{
-    entries.forEach(en=>{
-      if(en.isIntersecting){
-        const img=en.target.querySelector('img');
-        const d=parseInt(en.target.dataset.idx,10)%3;
-        setTimeout(()=>img.classList.add('in'), d*90);
-        obs.unobserve(en.target);
-      }
-    });
-  },{rootMargin:'0px 0px -8% 0px',threshold:.08});
+const pad=n=>String(n).padStart(2,'0');
+const worksEl=document.getElementById('works');
+let no=0;
+const galleries={}; // id -> [src1,src2...] for lightbox
 
-  for(let i=1;i<=TOTAL;i++){
-    const fig=document.createElement('figure');
-    fig.className='shot';fig.dataset.n=pad(i)+' / '+TOTAL;fig.dataset.idx=i;
-    const img=document.createElement('img');
-    img.src='thumbs/photo_'+pad(i)+'.jpg';img.alt='박첨지 고민상담소 still '+i;img.loading='lazy';
-    fig.appendChild(img);
-    fig.addEventListener('click',()=>openLB(i));
-    gallery.appendChild(fig);
-    shotObs.observe(fig);
-  }
-
-  // 섹션 스크롤 리빌
-  const revObs=new IntersectionObserver((entries,obs)=>{
-    entries.forEach(en=>{
-      if(en.isIntersecting){
-        const el=en.target;
-        el.classList.add('rv-in');
-        // 스태거 자식 지연
-        if(el.classList.contains('stagger')){
-          [...el.children].forEach((c,k)=>{c.style.transitionDelay=(k*60)+'ms';});
-        }
-        obs.unobserve(el);
-      }
-    });
-  },{rootMargin:'0px 0px -12% 0px',threshold:.12});
-  document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
-
-  // 히어로 패럴랙스 + 진행바
-  const heroimg=document.getElementById('heroimg');
-  const progress=document.getElementById('progress');
-  let ticking=false;
-  function onScroll(){
-    if(ticking)return;ticking=true;
-    requestAnimationFrame(()=>{
-      const y=window.scrollY;
-      heroimg.style.transform='translateY('+(y*0.35)+'px)';
-      const h=document.documentElement.scrollHeight-window.innerHeight;
-      progress.style.width=(h>0?(y/h*100):0)+'%';
-      ticking=false;
-    });
-  }
-  window.addEventListener('scroll',onScroll,{passive:true});
-
-  // 라이트박스
-  const lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),
-    lbCounter=document.getElementById('lbCounter');let cur=1;
-  function openLB(i){cur=i;show();lb.classList.add('on');document.body.style.overflow='hidden';}
-  function show(){
-    lbImg.style.opacity=0;
-    const im=new Image();
-    im.onload=()=>{lbImg.src=im.src;lbImg.style.opacity='';};
-    im.src='images/photo_'+pad(cur)+'.jpg';
-    lbCounter.textContent=pad(cur)+' / '+TOTAL;
-  }
-  function close(){lb.classList.remove('on');document.body.style.overflow='';}
-  function next(d){cur=((cur-1+d+TOTAL)%TOTAL)+1;show();}
-  document.getElementById('lbClose').onclick=close;
-  document.getElementById('lbNext').onclick=()=>next(1);
-  document.getElementById('lbPrev').onclick=()=>next(-1);
-  lb.addEventListener('click',e=>{if(e.target===lb)close();});
-  document.addEventListener('keydown',e=>{
-    if(!lb.classList.contains('on'))return;
-    if(e.key==='Escape')close();if(e.key==='ArrowRight')next(1);if(e.key==='ArrowLeft')next(-1);
+/* 갤러리 이미지 스크롤 리빌 (works 생성 전에 정의) */
+const shotObs=new IntersectionObserver((entries,obs)=>{
+  entries.forEach(en=>{
+    if(en.isIntersecting){
+      const img=en.target.querySelector('img');
+      const d=parseInt(en.target.dataset.idx,10)%3;
+      setTimeout(()=>img.classList.add('in'), d*90);
+      obs.unobserve(en.target);
+    }
   });
+},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+
+WORKS.forEach(w=>{
+  no++;
+  const sec=document.createElement('section');
+  sec.className='work reveal';sec.id='work-'+w.id;
+  let html=`<div class="work-head">
+      <div class="work-no">${pad(no)}</div>
+      <div>
+        <div class="work-title"><span class="lang-ko">${w.ko.title}</span><span class="lang-en">${w.en.title}</span></div>
+        <div class="work-genre"><span class="lang-ko">${w.ko.genre}</span><span class="lang-en">${w.en.genre}</span></div>
+        <div class="work-metaline">
+          <span>${w.year}</span>
+          <span><span class="lang-ko">연출</span><span class="lang-en">Role</span> · <b>${'<span class="lang-ko">'+w.ko.role+'</span><span class="lang-en">'+w.en.role+'</span>'}</b></span>
+          ${w.venue?'<span>'+w.venue+'</span>':''}
+        </div>
+      </div>
+      <p class="work-desc"><span class="lang-ko">${w.ko.desc}</span><span class="lang-en">${w.en.desc}</span></p>
+    </div>`;
+
+  if(w.video){
+    html+=`<div class="video"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/${w.video}?rel=0" title="${w.en.title}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
+  }
+  if(w.photos){
+    html+=`<div class="gallery" id="gal-${w.id}"></div>`;
+  }
+  sec.innerHTML=html;
+  worksEl.appendChild(sec);
+
+  if(w.photos){
+    const gal=sec.querySelector('#gal-'+w.id);
+    const total=w.photos.to-w.photos.from+1;
+    const srcs=[];
+    for(let i=w.photos.from;i<=w.photos.to;i++){
+      srcs.push('images/photo_'+pad(i)+'.jpg');
+      const k=i-w.photos.from+1;
+      const fig=document.createElement('figure');
+      fig.className='shot';fig.dataset.n=pad(k)+' / '+total;fig.dataset.idx=k;
+      const img=document.createElement('img');
+      img.src='thumbs/photo_'+pad(i)+'.jpg';img.alt=w.ko.title+' '+k;img.loading='lazy';
+      fig.appendChild(img);
+      fig.addEventListener('click',()=>openLB(w.id,k-1));
+      gal.appendChild(fig);
+      shotObs.observe(fig);
+    }
+    galleries[w.id]=srcs;
+  }
+});
+document.getElementById('workCount').textContent=WORKS.length+' WORKS · © Jo Junghyun / A moment lab';
+
+/* 섹션 리빌 */
+const revObs=new IntersectionObserver((entries,obs)=>{
+  entries.forEach(en=>{
+    if(en.isIntersecting){
+      const el=en.target;el.classList.add('rv-in');
+      if(el.classList.contains('stagger')){
+        [...el.children].forEach((c,k)=>{c.style.transitionDelay=(k*60)+'ms';});
+      }
+      obs.unobserve(el);
+    }
+  });
+},{rootMargin:'0px 0px -8% 0px',threshold:0});
+document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
+
+/* 히어로 패럴랙스 + 진행바 */
+const heroimg=document.getElementById('heroimg'),progress=document.getElementById('progress');
+let ticking=false;
+window.addEventListener('scroll',()=>{
+  if(ticking)return;ticking=true;
+  requestAnimationFrame(()=>{
+    const y=window.scrollY;
+    heroimg.style.transform='translateY('+(y*0.3)+'px)';
+    const h=document.documentElement.scrollHeight-window.innerHeight;
+    progress.style.width=(h>0?(y/h*100):0)+'%';ticking=false;
+  });
+},{passive:true});
+
+/* ── 라이트박스 (작품별) ── */
+const lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),lbCounter=document.getElementById('lbCounter');
+let curList=[],cur=0;
+function openLB(id,idx){curList=galleries[id]||[];cur=idx;show();lb.classList.add('on');document.body.style.overflow='hidden';}
+function show(){
+  lbImg.style.opacity=0;
+  const im=new Image();
+  im.onload=()=>{lbImg.src=im.src;lbImg.style.opacity='';};
+  im.src=curList[cur];
+  lbCounter.textContent=pad(cur+1)+' / '+curList.length;
+}
+function close(){lb.classList.remove('on');document.body.style.overflow='';}
+function nav(d){if(!curList.length)return;cur=(cur+d+curList.length)%curList.length;show();}
+document.getElementById('lbClose').onclick=close;
+document.getElementById('lbNext').onclick=()=>nav(1);
+document.getElementById('lbPrev').onclick=()=>nav(-1);
+lb.addEventListener('click',e=>{if(e.target===lb)close();});
+document.addEventListener('keydown',e=>{
+  if(!lb.classList.contains('on'))return;
+  if(e.key==='Escape')close();if(e.key==='ArrowRight')nav(1);if(e.key==='ArrowLeft')nav(-1);
+});
 </script>
 </body>
 </html>
