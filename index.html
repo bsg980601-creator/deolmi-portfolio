@@ -100,16 +100,20 @@
     background:var(--bg2);border:1px solid var(--line);margin-top:.5rem}
   .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
-  /* gallery */
-  .gallery{columns:3;column-gap:14px;margin-top:2.4rem}
-  @media(max-width:900px){.gallery{columns:2}}
-  @media(max-width:560px){.gallery{columns:1}}
-  .shot{break-inside:avoid;margin-bottom:14px;position:relative;cursor:pointer;
-    overflow:hidden;border-radius:4px;background:var(--bg2)}
-  .shot img{width:100%;display:block;
+  /* gallery — 크고 작게 모자이크 그리드 */
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:210px;
+    gap:12px;grid-auto-flow:dense;margin-top:2.4rem}
+  @media(max-width:900px){.gallery{grid-template-columns:repeat(3,1fr);grid-auto-rows:180px}}
+  @media(max-width:560px){.gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}}
+  .shot{position:relative;cursor:pointer;overflow:hidden;border-radius:4px;background:var(--bg2)}
+  .shot.big{grid-column:span 2;grid-row:span 2}
+  .shot.wide{grid-column:span 2}
+  .shot.tall{grid-row:span 2}
+  @media(max-width:560px){.shot.tall{grid-row:span 1}}
+  .shot img{width:100%;height:100%;object-fit:cover;display:block;
     transition:transform .8s var(--ease),opacity .8s var(--ease),filter .8s var(--ease);
-    opacity:0;transform:scale(1.08) translateY(24px);filter:saturate(.6)}
-  .shot img.in{opacity:1;transform:scale(1) translateY(0);filter:saturate(1)}
+    opacity:0;transform:scale(1.08);filter:saturate(.6)}
+  .shot img.in{opacity:1;transform:scale(1);filter:saturate(1)}
   .shot:hover img{transform:scale(1.06)}
   .shot::after{content:attr(data-n);position:absolute;bottom:10px;left:12px;
     font-family:"SF Mono",monospace;font-size:.62rem;letter-spacing:.15em;color:#fff;
@@ -218,7 +222,7 @@
 
 <!-- FOOTER -->
 <footer class="reveal">
-  <div class="big"><span class="lang-ko">전통은<br><em>가장 새로운</em> 무대다.</span><span class="lang-en">Tradition is<br>the <em>newest</em> stage.</span></div>
+  <div class="big"><span class="lang-ko">당신과 만나는 모든 곳에<br><em>웃음꽃</em>이 피어나기를.</span><span class="lang-en">May <em>laughter</em> bloom<br>wherever I meet you.</span></div>
   <div class="info">
     JO JUNGHYUN · DIRECTOR<br>
     A MOMENT LAB · <span class="lang-ko">현대연희</span><span class="lang-en">HYUNDAE YEONHUI</span><br>
@@ -248,7 +252,7 @@ const WORKS = [
         desc:'박첨지 인형극에 라이브 크로마키와 OBS 실시간 영상 합성, 관객의 실시간 참여(투표·무대 개입)를 결합했다. 인형과 배우, 스크린과 객석의 경계를 허물고 "지금 이 순간"을 콘텐츠로 만드는 인터랙티브 덜미쇼.'},
     en:{title:"Park Cheomji's Worry Clinic", genre:'Interactive Deolmi-show', role:'Written & Directed',
         desc:'A Park Cheomji puppet show fused with live chroma-key, real-time OBS compositing and live audience participation (voting, on-stage intervention). An interactive Deolmi-show that dissolves the line between puppet and actor, screen and seat — making the present moment itself the content.'},
-    venue:'2026 · Seoul', video:null, photos:{from:1, to:99}
+    venue:'2026 · Seoul', video:null, photos:{from:1, to:44}
   },
   {
     id:'scandal', year:'덜미쇼 R&D',
@@ -329,6 +333,8 @@ WORKS.forEach(w=>{
       const k=i-w.photos.from+1;
       const fig=document.createElement('figure');
       fig.className='shot';fig.dataset.n=pad(k)+' / '+total;fig.dataset.idx=k;
+      const sizes=['big','','','wide','','tall','','','wide','','big','','tall',''];
+      const sz=sizes[(k-1)%sizes.length]; if(sz) fig.classList.add(sz);
       const img=document.createElement('img');
       img.src='thumbs/photo_'+pad(i)+'.jpg';img.alt=w.ko.title+' '+k;img.loading='lazy';
       fig.appendChild(img);
